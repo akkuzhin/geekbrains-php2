@@ -1,7 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nurgiz
- * Date: 22.10.2019
- * Time: 0:24
- */
+
+require __DIR__ . '/models/news.php';
+
+$news = News_getAll();
+
+include __DIR__ . '/views/news.html';
