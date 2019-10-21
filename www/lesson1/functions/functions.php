@@ -1,10 +1,13 @@
 <?php
-//Устанавливает новое соединение с сервером MySQL
+
+//*** Устанавливает новое соединение с сервером MySQL
 function sql_connect()
 {
-    return mysqli_connect('localhost', 'root', '', 'test');
+    $config = include __DIR__ . '/../config.php';
+    return mysqli_connect($config['host'], $config['user'], $config['password'], $config['database']);
 }
 
+//*** Посылает запрос MySQL, возвращает ассоциативный массив, соответствующий результирующей выборке или NULL, если других рядов не существует.
 function sql_query($sql)
 {
     $link = sql_connect();
@@ -16,7 +19,8 @@ function sql_query($sql)
     return $ret;
 }
 
-function sql_execute($sql)
+//*** Выполняет подготовленный запрос
+function sql_exec($sql)
 {
     $link = sql_connect();
     $res = mysqli_query($link, $sql);
