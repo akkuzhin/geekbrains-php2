@@ -1,8 +1,7 @@
 <?php
-
 return [
     'host'=>'localhost',
-    'user'=>'root',
-    'password'=>'',
-    'database'=>'test'
+    'db_name'=>'test',
+    'username'=>'root',
+    'password'=>''
 ];

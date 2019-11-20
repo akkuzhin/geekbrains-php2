@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo $article->title;?></title>
+    <style>
+        table {
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+<h1>Газета.ru</h1>
+<p><a href="/index.php">Назад</a></p>
+<table border="1">
+    <tr>
+        <th colspan="2"><?php echo $article->title;?></th>
+    </tr>
+    <tr>
+        <td colspan="2"><?php echo $article->text?></td>
+    </tr>
+    <tr>
+        <td>Дата: <?php echo $article->date;?></td>
+        <td>СМИ: <?php echo $article->author;?></td>
+    </tr>
+</table>
+</body>
+</html>
