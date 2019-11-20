@@ -2,7 +2,7 @@
 require __DIR__ . '/models/News.php';
 
 if (!isset($_GET['id'])) {
-   header('Location: /index.php');
+   header('Location: /lesson2/index.php');
    die;
 }
 $id = (int)$_GET['id'];
