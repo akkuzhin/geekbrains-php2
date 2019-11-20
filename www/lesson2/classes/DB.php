@@ -1,29 +1,27 @@
 <?php
 
-class MySQL
+class DB
 {
     protected $link;
-    protected $data = [];
-
     public function __construct()
     {
-        $config = include __DIR__ . '/../config.php';
-        $this->link = mysqli_connect($config['host'], $config['user'], $config['password'], $config['database']);
+        $this->link = mysqli_connect('localhost', 'root', '', 'test');
     }
 
-    public function sql_query($sql)
+    public function sql_query($sql, $className = 'stdClass')
     {
-        $res = mysqli_query($this->link, $sql);
-        while(null !== $row = mysqli_fetch_assoc($res)) {
-            $this->data[] = $row;
+        $result = mysqli_query($this->link, $sql);
+        $data = [];
+        while (NULL != ($obj = mysqli_fetch_object($result, $className))) {
+            $data[] = $obj;
         }
-        return $this->data;
+        return $data;
     }
 
-    public function sql_execute($sql)
+    public function sql_exec($sql)
     {
-        $res = mysqli_query($this->link, $sql);
-        if ($res === true) {
+        $result = mysqli_query($this->link, $sql);
+        if ($result) {
             return true;
         } else {
             return false;

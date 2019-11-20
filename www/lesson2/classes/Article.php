@@ -1,12 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Nurgiz
- * Date: 23.10.2019
- * Time: 23:52
- */
 
-class Article
+abstract class Article
 {
+    public $id;
+    public $date;
+    public $title;
+    public $text;
+    public $author;
 
+    abstract public static function News_getAll(); //Получить все новости
+    abstract public static function News_getOne($id);  //Получить одну новость
 }
