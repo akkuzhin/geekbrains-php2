@@ -20,5 +20,5 @@ if (!empty($_POST)) {
         News::News_insert($data);
     }
 }
-header('Location: /index.php');
+header('Location: /lesson2/index.php');
 die;
