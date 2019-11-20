@@ -23,7 +23,7 @@
     <tr>
         <td><?php echo $article->date; ?></td>
         <td>
-            <a href="/article.php?id=<?php echo $article->id; ?>">
+            <a href="/lesson2/article.php?id=<?php echo $article->id; ?>">
                 <?php echo $article->title; ?>
             </a>
         </td>
@@ -34,7 +34,7 @@
 <hr>
 <h3>Добавить новость</h3>
 <hr>
-<form action="/add.php" method="post">
+<form action="/lesson2/add.php" method="post">
     Заголовок:<br>
     <input type="text" name="title"><br>
     Текст:<br>
