@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Газета.ru</title>
+</head>
+<body>
+<h1>Газета.RU</h1>
+<hr>
+    <?php foreach ($items as $item): ?>
+    <h2><a href="/lesson4/index.php?ctrl=News&act=One&id=<?php echo $item->id; ?>"><?php echo $item->title; ?></a></h2>
+    <p>
+        <?php echo mb_substr($item->text, 0, mb_strpos($item->text, '.', 70)); ?>
+        <a href="/lesson4/index.php?ctrl=News&act=One&id=<?php echo $item->id; ?>">читать далее >>></a><br>
+    </p>
+    Источник: <strong><?php echo $item->author; ?></strong><br>
+    Дата: <?php echo $item->date; ?>
+    <hr>
+    <?php endforeach; ?>
+&copy; Нургиз Аккужин
+</body>
+</html>
