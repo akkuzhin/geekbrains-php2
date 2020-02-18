@@ -12,10 +12,15 @@
 <h3>Админ-панель</h3>
 <hr>
 <h2>Добавить новость</h2>
-    <form action="/admin.php?ctrl=Admin&act=Insert" method="post">
-        <p>Заголовок: <input type="text" name="title"></p>
-        <p>Текст: <input type="text" name="text"></p>
-        <p>Автор <input type="text" name="author"></p>
+    <form action="/lesson5/admin.php?ctrl=Admin&act=Insert" method="post">
+        <label for="title">Заголовок:</label>
+        <input id="title" type="text" name="title">
+        <br>
+        <label for="message">Основной текс:</label><br>
+        <textarea id="message" name="text"></textarea>
+        <br>
+        <label for="author">Автор:</label>
+        <input id="author" type="text" name="author">
         <p><input type="submit"></p>
     </form>
 </body>

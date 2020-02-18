@@ -2,7 +2,6 @@
 
 class View
 {
-
     protected $data = [];
     public function __set($name, $value) //магия
     {
@@ -11,7 +10,7 @@ class View
 
     public function __get($name)
     {
-        $this->data[$name];
+        return $this->data[$name];
     }
 
     public function display($template)

@@ -2,34 +2,38 @@
 
 class DB
 {
-    protected $link;
+    private $dbh;
+    private $className = 'stdClass';
     public function __construct()
     {
-        $this->link = mysqli_connect('localhost', 'root', '', 'test');
+        $this->dbh = new PDO('mysql:dbname=test;host=localhost', 'root', '');
+
+    }
+    public function setClassName($className)
+    {
+        $this->className = $className;
     }
 
-    public function queryAll($sql, $className = 'stdClass')
+    public function query($sql, $params = [])
     {
-        $result = mysqli_query($this->link, $sql);
-        $data = [];
-        while (NULL != ($obj = mysqli_fetch_object($result, $className))) {
-            $data[] = $obj;
-        }
-        return $data;
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute($params);
+        return $sth->fetchAll(PDO::FETCH_CLASS, $this->className);
     }
 
-    public function queryOne($sql, $className = 'stdClass')
+    public function execute($sql, $params = [])
     {
-        return $this->queryAll($sql, $className)[0];
-    }
-
-    public function sql_exec($sql)
-    {
-        $result = mysqli_query($this->link, $sql);
+        $sth = $this->dbh->prepare($sql);
+        $result = $sth->execute($params);
         if ($result) {
             return true;
         } else {
             return false;
         }
+    }
+    //* Возвращает ID последней вставленной строки или значение последовательности
+    public function lastInsertId()
+    {
+        return $this->dbh->lastInsertId();
     }
 }

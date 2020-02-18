@@ -8,7 +8,7 @@
 <h1>Газета.RU</h1>
 <h3>Админ - панель</h3>
 <h2>Изменить новость</h2>
-<form action="/admin.php?ctrl=Admin&act=Update" method="post">
+<form action="/lesson5/admin.php?ctrl=Admin&act=Update" method="post">
     <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
     <p>Заголовок: <input type="text" name="title" value="<?php echo $article->title; ?>"></p>
     <p>Текст: <input type="text" name="text" value="<?php echo $article->text; ?>"></p>

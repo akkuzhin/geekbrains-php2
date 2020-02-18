@@ -1,5 +1,6 @@
 <?php
 
+
 function __autoload($className)
 {
     if (file_exists(__DIR__ . '/controllers/' . $className . '.php')) {

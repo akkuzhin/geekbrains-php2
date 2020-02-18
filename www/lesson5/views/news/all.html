@@ -9,20 +9,17 @@
 </head>
 <body>
 <h1>Газета.RU</h1>
-<?php
-    var_dump($items);
-?>
 <hr>
-    <?php foreach ($items as $item): ?>
-    <h2><a href="/lesson4/index.php?ctrl=News&act=One&id=<?php echo $item->id; ?>"><?php echo $item->title; ?></a></h2>
+    <?php foreach ($this->data['news'] as $item): ?>
+    <h2><a href="/lesson5/index.php?ctrl=News&act=One&id=<?php echo $item->id; ?>"><?php echo $item->title; ?></a></h2>
     <p>
-        <?php echo mb_substr($item->text, 0, mb_strpos($item->text, '.', 70)); ?>
-        <a href="/lesson4/index.php?ctrl=News&act=One&id=<?php echo $item->id; ?>">читать далее >>></a><br>
+        <?php echo $item->text; ?><br>
     </p>
     Источник: <strong><?php echo $item->author; ?></strong><br>
-    Дата: <?php echo $item->date; ?>
     <hr>
     <?php endforeach; ?>
 &copy; Нургиз Аккужин
+<hr>
+<?php var_dump($this->data['news']);?>
 </body>
 </html>

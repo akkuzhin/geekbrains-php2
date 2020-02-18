@@ -5,16 +5,22 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo $item->title; ?></title>
+    <title><?php echo $article->title; ?></title>
 </head>
 <body>
 <h1>Газета.RU</h1>
+
 <hr>
-    <h2><?php echo $item->title; ?></h2>
+    <h2><?php echo $article->title; ?></h2>
     <p>
-        <?php echo $item->text; ?><br>
+        <?php echo $article->text; ?><br>
     </p>
-    Автор: <strong><?php echo $item->author; ?></strong><br>
-    Дата: <?php echo $item->date; ?>
+    Автор: <strong><?php echo $article->author; ?></strong><br>
+<hr>
+<a href="/lesson5/index.php?ctrl=News&act=Update&id=<?php echo $article->id;?>">Edit</a><br>
+<a href="/lesson5/admin.php?ctrl=Admin&act=Delete&id=<?php echo $article->id; ?>">Delete</a>
+<hr>
+
+<?php var_dump($this->data);?>
 </body>
 </html>
