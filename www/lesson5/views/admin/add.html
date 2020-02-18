@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Админ</title>
+</head>
+<body>
+<h1>Газета.RU</h1>
+<h3>Админ-панель</h3>
+<hr>
+<h2>Добавить новость</h2>
+    <form action="/admin.php?ctrl=Admin&act=Insert" method="post">
+        <p>Заголовок: <input type="text" name="title"></p>
+        <p>Текст: <input type="text" name="text"></p>
+        <p>Автор <input type="text" name="author"></p>
+        <p><input type="submit"></p>
+    </form>
+</body>
+</html>

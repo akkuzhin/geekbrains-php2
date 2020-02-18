@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Газета.RU</h1>
+<h3>Админ - панель</h3>
+<h2>Изменить новость</h2>
+<form action="/admin.php?ctrl=Admin&act=Update" method="post">
+    <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+    <p>Заголовок: <input type="text" name="title" value="<?php echo $article->title; ?>"></p>
+    <p>Текст: <input type="text" name="text" value="<?php echo $article->text; ?>"></p>
+    <p>Автор <input type="text" name="author" value="<?php echo $article->author; ?>"></p>
+    <p><input type="submit"></p>
+</form>
+</body>
+</html>
